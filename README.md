@@ -76,4 +76,8 @@ module.exports = {
   usdcContract = new ethers.Contract(USDC, USDCABI, usdcHolder)
   ```
   
+  Query struct and array values
+  ```
+  #TODO
+  ```
   
