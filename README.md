@@ -76,8 +76,23 @@ module.exports = {
   usdcContract = new ethers.Contract(USDC, USDCABI, usdcHolder)
   ```
   
-  Query struct and array values
+  Query struct and array, mapping values
   ```
-  #TODO
+  #Mapping 
+  const userInfo = await stakingContract.userInfo(owner.address);
+  expect(userInfo[0]).to.equal(parseEther("3000"));
+  expect(userInfo[2].toString()).to.equal("true");
   ```
   
+  Bypass Timestamp
+  ```
+  // suppose the current block has a timestamp of 01:00 PM
+  await network.provider.send("evm_increaseTime", [3600])
+  await network.provider.send("evm_mine") // this one will have 02:00 PM as its timestamp
+  ```
+  
+  ```
+  evm_setNextBlockTimestamp
+  await network.provider.send("evm_setNextBlockTimestamp", [1625097600])
+  await network.provider.send("evm_mine") // this one will have 2021-07-01 12:00 AM as its timestamp, no matter what the previous block has
+  ```
