@@ -83,7 +83,11 @@ module.exports = {
   expect(userInfo[0]).to.equal(parseEther("3000"));
   expect(userInfo[2].toString()).to.equal("true");
   ```
-  
+  ```
+  #Array
+  const stbCoinListAfter = await PresaleContract.stableCoinLists.call()
+  expect(stbCoinListAfter).to.be.an('array').that.does.not.include(USDT);
+  ```
   Bypass Timestamp
   ```
   // suppose the current block has a timestamp of 01:00 PM
