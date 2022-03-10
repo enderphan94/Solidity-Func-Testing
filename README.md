@@ -87,8 +87,9 @@ module.exports = {
   ```
   ```
   #Array
-  const stbCoinListAfter = await PresaleContract.stableCoinLists.call()
+  const stbCoinListAfter = await PresaleContract.stableCoinLists()
   expect(stbCoinListAfter).to.be.an('array').that.does.not.include(USDT);
+  expect(stbCoinListAfter).to.include.members([ethers.utils.getAddress(USDC.address)]);
   ```
   Bypass Timestamp
   ```
