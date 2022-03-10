@@ -11,6 +11,8 @@ https://www.chaijs.com/api/bdd/
 
 https://docs.ethers.io/v5/getting-started/
 
+https://medium.com/building-ibotta/testing-arrays-and-objects-with-chai-js-4b372310fe6d
+
 ## Environment Setup
 
 `npm init --yes`
