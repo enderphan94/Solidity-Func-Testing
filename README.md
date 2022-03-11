@@ -99,7 +99,12 @@ module.exports = {
   await network.provider.send("evm_increaseTime", [3600])
   await network.provider.send("evm_mine") // this one will have 02:00 PM as its timestamp
   ```
-  
+  getting timestamp
+  ```
+  const blockNumBefore = await ethers.provider.getBlockNumber();
+  const blockBefore = await ethers.provider.getBlock(blockNumBefore);
+  const timestampBefore = blockBefore.timestamp;
+  ```
   ```
   evm_setNextBlockTimestamp
   await network.provider.send("evm_setNextBlockTimestamp", [1625097600])
