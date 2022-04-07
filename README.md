@@ -125,3 +125,16 @@ module.exports = {
   // True. Set it without double qoutes
   farm.addPool(_allocPoint,_lockHours,_isLinearRelease, false)
   ```
+
+  Similar with "expect"
+  
+  ```
+  // true
+  
+  expect(pool[12]).to.equal(false)
+  
+  // false
+  
+  expect(pool[12]).to.equal("false)
+  
+  ```
