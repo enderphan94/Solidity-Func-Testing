@@ -110,3 +110,18 @@ module.exports = {
   await network.provider.send("evm_setNextBlockTimestamp", [1625097600])
   await network.provider.send("evm_mine") // this one will have 2021-07-01 12:00 AM as its timestamp, no matter what the previous block has
   ```
+  # Some mistakes
+  
+  Boolean value set in Hardhat in string type variable will result a wrong output in solidity.
+ 
+  Eg:
+  
+  ```
+  // False. This will return a wrong boolean value in solidity 
+  farm.addPool(_allocPoint,_lockHours,_isLinearRelease, "false")
+  ```
+  
+   ```
+  // True. Set it without double qoutes
+  farm.addPool(_allocPoint,_lockHours,_isLinearRelease, false)
+  ```
