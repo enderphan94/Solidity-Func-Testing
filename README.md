@@ -130,11 +130,8 @@ module.exports = {
   
   ```
   // true
-  
   expect(pool[12]).to.equal(false)
   
   // false
-  
-  expect(pool[12]).to.equal("false)
-  
+  expect(pool[12]).to.equal("false")
   ```
